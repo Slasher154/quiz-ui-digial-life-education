@@ -1,0 +1,331 @@
+<t<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+    <title>SatPORT for Distance Learning</title>
+
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+<nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="index.html" class="brand-logo">SatPORT for Distance Learning</a>
+        <ul class="right hide-on-med-and-down">
+            <li><a href="#">Sign Out</a></li>
+        </ul>
+
+        <ul id="nav-mobile" class="side-nav">
+            <li><a href="#">Sign out</a></li>
+        </ul>
+        <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+</nav>
+<div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+        <br><br>
+        <h4 class="header test-type orange-text">แบบทดสอบก่อนเรียน<h4>
+        <div class="chip grade-tag">
+
+        </div>
+        <div class="chip subject-tag">
+
+        </div>
+        <div class="divider"></div>
+        <br>
+    </div>
+</div>
+
+<div class="container">
+    <div class="section">
+
+        <!--   Question and choices  -->
+        <div class="row">
+            <div class="col s12"><h4 class="question"></h4></div>
+        </div>
+        <div class="row choices">
+
+        </div>
+        <div class="row">
+            <div class="col s12 center-align">
+                <a class="waves-effect waves-light btn btn-large red previous-question"><i class="material-icons left">fast_rewind</i>ข้อที่แล้ว</a>
+                <a class="waves-effect waves-light btn btn-large green next-question"><i class="material-icons right">fast_forward</i>ข้อถัดไป</a>
+                <a class="waves-effect waves-light btn btn-large blue submit-score"><i class="material-icons right">done</i>ส่งข้อสอบ</a>
+            </div>
+        </div>
+    </div>
+    <br><br>
+    <div class="section">
+
+        <!-- Modal Structure -->
+        <div id="confirmationModal" class="modal">
+            <div class="modal-content">
+                <h4 class="modal-title center-align">ยืนยันการส่งคะแนน</h4>
+                <div class="divider"></div>
+                <div class="section">
+                    <div class="row center-align">
+                        <a class="waves-effect waves-light btn btn-large green submit-confirmed"><i class="material-icons left">done</i>ตกลง</a>
+                        <a class="waves-effect waves-light btn btn-large red submit-cancel">ย้อนกลับ</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<footer class="page-footer orange">
+    <div class="container">
+        <div class="row">
+
+            <div class="col l6 s12">
+                <h5 class="white-text">Company Bio</h5>
+                <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+
+
+            </div>
+            <div class="col l3 s12">
+                <h5 class="white-text">Settings</h5>
+                <ul>
+                    <li><a class="white-text" href="#!">Link 1</a></li>
+                    <li><a class="white-text" href="#!">Link 2</a></li>
+                    <li><a class="white-text" href="#!">Link 3</a></li>
+                    <li><a class="white-text" href="#!">Link 4</a></li>
+                </ul>
+            </div>
+            <div class="col l3 s12">
+                <h5 class="white-text">Connect</h5>
+                <ul>
+                    <li><a class="white-text" href="#!">Link 1</a></li>
+                    <li><a class="white-text" href="#!">Link 2</a></li>
+                    <li><a class="white-text" href="#!">Link 3</a></li>
+                    <li><a class="white-text" href="#!">Link 4</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="container">
+            Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+        </div>
+    </div>
+</footer>
+
+
+<!--  Scripts-->
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="js/materialize.js"></script>
+<script src="js/init.js"></script>
+<script src="js/underscore-min.js"></script>
+<script src="js/xmlToJSON.js"></script>
+<script src="js/xml2json.js"></script>
+<script src="js/quiz.js"></script>
+
+
+<script type="text/javascript">
+
+    // Initialize the variables
+    var quizXmlFilePath = "quizzes.xml";
+    var currentQuiz;
+
+    // Use this parameter to keep track of which question we are doing
+    var currentQuestionIndex = 1;
+
+    // Use this array to store answers of each questions attempted
+    var answers = [];
+
+    $(document).ready(function() {
+
+        // Get the test information from query string
+        var grade = parseInt(getUrlParameter('grade'));
+        var testtype = getUrlParameter('testtype');
+        var subject = getUrlParameter('subject');
+
+        // Update the test type title
+        var testTypeText = 'แบบทดสอบ'
+        if (testtype === 'pre-test') { testTypeText += 'ก่อนเรียน' };
+        if (testtype === 'post-test') { testTypeText += 'หลังเรียน' };
+        testTypeText += " วิชา" + findThaiNameSubject(subject);
+        testTypeText += " ป." + grade;
+        $('.test-type').html(testTypeText);
+
+        // Update the tags
+        $('.grade-tag').html('ป. ' + grade);
+        $('.subject-tag').html(findThaiNameSubject(subject));
+
+        // pull the quiz from xml file based on the query string
+        currentQuiz = _.findWhere(getArrayOfQuizzes(quizXmlFilePath), {
+            grade: grade, testtype: testtype, subject: subject
+        });
+
+        // Render the question
+        renderQuestion();
+
+        // Setup show/hide of previous/next/submit question button
+        setupNavigationButtons();
+
+        // Handle the previous button click
+        $('.previous-question').click(function() {
+            currentQuestionIndex--;
+            navigateToQuestion();
+        });
+
+        // Handle the next button click
+        $('.next-question').click(function() {
+            currentQuestionIndex++;
+            navigateToQuestion();
+        });
+
+        // Handle the submit score button click
+        $('.submit-score').click(function () {
+            $('#confirmationModal').openModal();
+        });
+
+        // Handle the modal cancel button click
+        $('.submit-cancel').click(function() {
+            $('#confirmationModal').closeModal();
+        })
+
+        // Handle the modal submit button click
+        $('.submit-confirmed').click(function () {
+            var answerAndScores = {
+                grade: grade,
+                testtype: testtype,
+                subject: subject
+            };
+            answerAndScores.score = calculateScore();
+            answerAndScores.answers = answers;
+            sessionStorage.answerAndScores = JSON.stringify(answerAndScores);
+            window.location.href = 'score.html';
+        });
+
+
+    });
+
+    // Replace the UI of current question and choices
+    function navigateToQuestion() {
+        renderQuestion();
+        setupNavigationButtons();
+        renderSelectedAnswer();
+    }
+
+    function renderQuestion() {
+
+        // Get the current attempted question, which is kept track by currentQuestion parameter
+        var currentQuestion = _.findWhere(currentQuiz.questions, { index: currentQuestionIndex });
+
+        // Render the question text and choices based on the current question parameter
+        renderQuestionText(currentQuestionIndex + '. ' + currentQuestion.questiontext);
+
+        // Render the choices
+        renderChoices(currentQuestion.choices);
+    }
+
+    function renderQuestionText(questionText) {
+        $('.question').html(questionText);
+    }
+
+    function renderChoices(arrayOfChoices) {
+        var $container = $('.choices');
+        var choiceHtml = '<div class="col s6 m6"><div class="choice-card card-panel hoverable center-align" choiceIndex="index"><h5>Content</h5></div></div>';
+        $container.empty();
+        _.each(arrayOfChoices, function(choice) {
+            $container.append(choiceHtml.replace('Content', choice.text).replace('index', choice.index));
+        });
+
+        // Remove the blue bg css class from other choices and add blue bg to the one clicked
+        $('.choice-card').click(function(){
+            var choiceIndex = parseInt($(this).attr('choiceIndex'));
+            $container.find('.choice-card').removeClass('blue');
+            toggleChoiceCardClass($(this));
+
+            // Store the selected choice in the array
+            storeAnswer(currentQuestionIndex, choiceIndex);
+
+        });
+    }
+
+    function setupNavigationButtons() {
+        if(currentQuestionIndex <= 1) {
+            $('.previous-question').hide();
+        }
+        else {
+            $('.previous-question').show();
+        }
+        if(currentQuestionIndex === currentQuiz.questions.length) {
+            $('.next-question').hide();
+            $('.submit-score').show();
+        }
+        else {
+            $('.next-question').show();
+            $('.submit-score').hide();
+        }
+    }
+
+    // Look through the answers array if the current attempted question has already been answered.
+    // If yes, add css class to that choice
+    function renderSelectedAnswer() {
+        var ans = _.findWhere(answers, { questionIndex: currentQuestionIndex });
+        if (ans != undefined) {
+            var selectedChoice = ans.answerIndex;
+            var $choiceCard = $('div.choice-card[choiceIndex=' + selectedChoice + ']');
+            $choiceCard.addClass('blue');
+        }
+    }
+
+    // Look through the answers array to see if there is an answer of the given question index stored yet.
+    // If not, push the new questionIndex,Answer Index pair. Otherwise, update it.
+    function storeAnswer(questionIndex, answerIndex) {
+        var ans = _.findWhere(answers, { questionIndex: questionIndex });
+        if (ans != undefined) {
+            ans.answerIndex = answerIndex;
+        }
+        else {
+            answers.push({ questionIndex: questionIndex, answerIndex: answerIndex})
+        }
+        console.log(answers);
+    }
+
+    function toggleChoiceCardClass($choiceCard) {
+        $choiceCard.toggleClass("blue");
+    }
+
+    function getUrlParameter(sParam) {
+        var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+                sURLVariables = sPageURL.split('&'),
+                sParameterName,
+                i;
+
+        for (i = 0; i < sURLVariables.length; i++) {
+            sParameterName = sURLVariables[i].split('=');
+
+            if (sParameterName[0] === sParam) {
+                return sParameterName[1] === undefined ? true : sParameterName[1];
+            }
+        }
+    };
+
+    // Return the score of this quiz attempt
+    function calculateScore() {
+        var score = 0;
+        _.each(currentQuiz.questions, function(question) {
+            var ans = _.findWhere(answers, { questionIndex: question.index });
+            if (ans != undefined) {
+                var selectedChoice = _.findWhere(question.choices, { index: ans.answerIndex });
+                if (selectedChoice.iscorrect) score++;
+            }
+        });
+        return score;
+    }
+
+
+
+
+
+</script>
+
+</body>
+</html>

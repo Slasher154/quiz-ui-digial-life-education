@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>SatPORT for Distance Learning</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+  <nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="index.html" class="brand-logo">SatPORT for Distance Learning</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#">Sign Out</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="side-nav">
+        <li><a href="#">Sign out</a></li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <br><br>
+      <h3 class="header center orange-text">เลือกระดับชั้นสำหรับการทำแบบทดสอบ</h3>
+      <br>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="section">
+
+      <!--   Grade picker section  -->
+      <div class="row grade-picker">
+
+      </div>
+
+    </div>
+    <br><br>
+
+    <div class="section">
+
+      <!-- Modal Structure -->
+      <div id="modal1" class="modal">
+        <div class="modal-content">
+          <h4 class="modal-title">เลือกแบบทดสอบ</h4>
+          <div class="divider"></div>
+          <div class="section">
+            <div class="row">
+              <h5>แบบทดสอบก่อนเรียน</h5>
+            </div>
+            <div class="row pre-test">
+
+            </div>
+          </div>
+
+          <div class="section">
+            <div class="row">
+              <h5>แบบทดสอบหลังเรียน</h5>
+            </div>
+            <div class="row post-test">
+
+            </div>
+          </div>
+        </div>
+        <!--
+        <div class="modal-footer">
+          <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">ย้อนกลับ</a>
+        </div>
+        -->
+      </div>
+    </div>
+  </div>
+
+  <footer class="page-footer orange">
+    <div class="container">
+      <div class="row">
+        <!--
+        <div class="col l6 s12">
+          <h5 class="white-text">Company Bio</h5>
+          <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+
+
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Settings</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Connect</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+        -->
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+  <script src="js/underscore-min.js"></script>
+  <script src="js/xmlToJSON.js"></script>
+  <script src="js/xml2json.js"></script>
+  <script src="js/quiz.js"></script>
+
+
+  <script type="text/javascript">
+
+    // Initialize the variables
+    var quizXmlFilePath = "quizzes.xml";
+
+    $(document).ready(function(){
+
+      // Get the array of quizzes (see the xml file structure)
+      var quizzes = getArrayOfQuizzes(quizXmlFilePath);
+
+      // Obtain students grade which all quiz contains. It is usually => [1,2,3,4,5,6]
+      var studentGrades = getAvailableGrades(quizzes);
+
+      // Render the grade pickers based on student grades
+      renderGradePickers($('.grade-picker'), studentGrades);
+    });
+
+    // Return the available grades from the quiz array
+    // For example, if the array contains the quizzes for grade 1,2,3,4,5,6, returns [1,2,3,4,5,6]
+    function getAvailableGrades(quizzes) {
+      return _.unique(_.pluck(quizzes, 'grade'));
+    }
+
+    // Render Grade pickers
+    function renderGradePickers($container, grades) {
+      var cardHtml = '<div class="col s6 m4"><div class="grade-card card-panel hoverable center-align">Content</div></div>';
+      _.each(grades, function(grade, index) {
+        $container.append(cardHtml.replace('>Content', ' value="' + grade + '"><h4>ป. ' + grade + '</h4>'));
+      });
+
+      // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+      $('.grade-card').click(function (event)  {
+        event.preventDefault();
+        var grade = parseInt($(this).attr("value"));
+
+        // Render the modal to contain choices
+        var $modal = $('#modal1');
+
+        // Get the array of quizzes (see the xml file structure)
+        var quizzes = getArrayOfQuizzes(quizXmlFilePath);
+
+        // Find the pre-test and post-test quizzes of this grade from the quiz array
+        var preTestQuizzes = _.where(quizzes, { grade: grade, testtype: "pre-test" });
+        var postTestQuizzes = _.where(quizzes, { grade: grade, testtype: "post-test" });
+        console.log(grade);
+        console.log(typeof(grade));
+        console.log(quizzes);
+        console.log(preTestQuizzes);
+        console.log(postTestQuizzes);
+
+        // Add the quizzes to the modal
+        addQuizToModalSection($modal.find('.pre-test'), preTestQuizzes);
+        addQuizToModalSection($modal.find('.post-test'), postTestQuizzes);
+
+        $modal.openModal();
+      });
+    }
+
+    function addQuizToModalSection($section, quizzes) {
+      var cardHtml = '<div class="col s12 m3"><div class="card"><div class="card-image"><a href="quizUrl"><img src="imageUrl"></a></div></div></div>';
+      $section.empty();
+      _.each(quizzes, function (quiz, index) {
+        //var subject = findThaiNameSubject(quiz.subject);
+        // Replace the imageUrl text in cardHtml with the logo url
+        cardHtml = cardHtml.replace('imageUrl', 'images/' + quiz.subject + '-logo.PNG');
+        // Replace the quiz Url
+        cardHtml = cardHtml.replace('quizUrl', constructQuizUrl(quiz.grade, quiz.testtype, quiz.subject));
+        $section.append(cardHtml);
+      });
+    }
+
+    function constructQuizUrl(grade, type, subject) {
+      var gradeQueryString = 'grade=' + grade;
+      var typeQueryString = 'testtype=' + type;
+      var subjectQueryString = 'subject=' + subject;
+      return 'quiz.html?' + gradeQueryString + '&' + typeQueryString + '&' + subjectQueryString;
+    }
+
+    function findThaiNameSubject(subjectNameInEnglish) {
+      var dict = {
+        math: "คณิตศาสตร์",
+        english: "ภาษาอังกฤษ",
+        science: "วิทยาศาสตร์",
+        thai: "ภาษาไทย",
+        social: "สังคมศึกษา"
+      }
+      if (dict[subjectNameInEnglish] === undefined) {
+        return "";
+      }
+      return dict[subjectNameInEnglish];
+    }
+
+
+
+  </script>
+
+  </body>
+</html>
