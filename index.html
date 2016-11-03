@@ -6,7 +6,7 @@
   <title>SatPORT for Distance Learning</title>
 
   <!-- CSS  -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="fonts/material/MaterialIcons-Regular.ttf" rel="stylesheet">
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
@@ -169,9 +169,7 @@
         // Find the pre-test and post-test quizzes of this grade from the quiz array
         var preTestQuizzes = _.where(quizzes, { grade: grade, testtype: "pre-test" });
         var postTestQuizzes = _.where(quizzes, { grade: grade, testtype: "post-test" });
-        console.log(grade);
-        console.log(typeof(grade));
-        console.log(quizzes);
+
         console.log(preTestQuizzes);
         console.log(postTestQuizzes);
 
@@ -184,12 +182,12 @@
     }
 
     function addQuizToModalSection($section, quizzes) {
-      var cardHtml = '<div class="col s12 m3"><div class="card"><div class="card-image"><a href="quizUrl"><img src="imageUrl"></a></div></div></div>';
+      var originalCardHtml = '<div class="col s12 m3"><div class="card"><div class="card-image hoverable"><a href="quizUrl"><img src="imageUrl"></a></div></div></div>';
       $section.empty();
-      _.each(quizzes, function (quiz, index) {
+      _.each(quizzes, function (quiz) {
         //var subject = findThaiNameSubject(quiz.subject);
         // Replace the imageUrl text in cardHtml with the logo url
-        cardHtml = cardHtml.replace('imageUrl', 'images/' + quiz.subject + '-logo.PNG');
+        var cardHtml = originalCardHtml.replace('imageUrl', 'images/' + quiz.subject + '-logo.PNG');
         // Replace the quiz Url
         cardHtml = cardHtml.replace('quizUrl', constructQuizUrl(quiz.grade, quiz.testtype, quiz.subject));
         $section.append(cardHtml);
