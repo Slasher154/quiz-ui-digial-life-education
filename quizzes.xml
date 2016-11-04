@@ -309,14 +309,14 @@
         </questions>
         <questions>
             <index>2</index>
-            <questiontext>ข้อใดต่อไปนี้คือแหล่งพลังงานของเซลล์?</questiontext>
+            <questiontext>ข้อใดต่อไปนี้คือแหล่งพลังงานของเซลล?</questiontext>
             <choices>
                 <index>1</index>
                 <text>นิวเคลียส</text>
             </choices>
             <choices>
                 <index>2</index>
-                <text>เยื่อหุ้มเซลล์</text>
+                <text>เยื่อหุ้มเซลล</text>
             </choices>
             <choices>
                 <index>3</index>
@@ -325,7 +325,7 @@
             </choices>
             <choices>
                 <index>4</index>
-                <text>คลอโรพลาสต์</text>
+                <text>คลอโรพลาสต</text>
             </choices>
         </questions>
         <questions>
@@ -341,7 +341,7 @@
             </choices>
             <choices>
                 <index>3</index>
-                <text>ไตรกลีเซอไรด์</text>
+                <text>ไตรกลีเซอไรด</text>
             </choices>
             <choices>
                 <index>4</index>
@@ -379,14 +379,14 @@
         </questions>
         <questions>
             <index>2</index>
-            <questiontext>ข้อใดต่อไปนี้คือแหล่งพลังงานของเซลล์?</questiontext>
+            <questiontext>ข้อใดต่อไปนี้คือแหล่งพลังงานของเซลล?</questiontext>
             <choices>
                 <index>1</index>
                 <text>นิวเคลียส</text>
             </choices>
             <choices>
                 <index>2</index>
-                <text>เยื่อหุ้มเซลล์</text>
+                <text>เยื่อหุ้มเซลล</text>
             </choices>
             <choices>
                 <index>3</index>
@@ -395,7 +395,7 @@
             </choices>
             <choices>
                 <index>4</index>
-                <text>คลอโรพลาสต์</text>
+                <text>คลอโรพลาสต</text>
             </choices>
         </questions>
         <questions>
@@ -411,7 +411,7 @@
             </choices>
             <choices>
                 <index>3</index>
-                <text>ไตรกลีเซอไรด์</text>
+                <text>ไตรกลีเซอไรด</text>
             </choices>
             <choices>
                 <index>4</index>
@@ -481,12 +481,12 @@
             </choices>
             <choices>
                 <index>3</index>
-                <text>has driven์</text>
+                <text>has driven</text>
             </choices>
             <choices>
                 <index>4</index>
-                <text>ถูกทุกข้อ</text>
-                <iscorrect>was driving</iscorrect>
+                <text>was driving</text>
+                <iscorrect>true</iscorrect>
             </choices>
         </questions>
     </quiz>
@@ -551,12 +551,12 @@
             </choices>
             <choices>
                 <index>3</index>
-                <text>has driven์</text>
+                <text>has driven</text>
             </choices>
             <choices>
                 <index>4</index>
-                <text>ถูกทุกข้อ</text>
-                <iscorrect>was driving</iscorrect>
+                <text>was driving</text>
+                <iscorrect>true</iscorrect>
             </choices>
         </questions>
     </quiz>
@@ -869,14 +869,14 @@
         </questions>
         <questions>
             <index>2</index>
-            <questiontext>ข้อใดต่อไปนี้คือแหล่งพลังงานของเซลล์?</questiontext>
+            <questiontext>ข้อใดต่อไปนี้คือแหล่งพลังงานของเซลล?</questiontext>
             <choices>
                 <index>1</index>
                 <text>นิวเคลียส</text>
             </choices>
             <choices>
                 <index>2</index>
-                <text>เยื่อหุ้มเซลล์</text>
+                <text>เยื่อหุ้มเซลล</text>
             </choices>
             <choices>
                 <index>3</index>
@@ -885,7 +885,7 @@
             </choices>
             <choices>
                 <index>4</index>
-                <text>คลอโรพลาสต์</text>
+                <text>คลอโรพลาสต</text>
             </choices>
         </questions>
         <questions>
@@ -901,7 +901,7 @@
             </choices>
             <choices>
                 <index>3</index>
-                <text>ไตรกลีเซอไรด์</text>
+                <text>ไตรกลีเซอไรด</text>
             </choices>
             <choices>
                 <index>4</index>
@@ -939,14 +939,14 @@
         </questions>
         <questions>
             <index>2</index>
-            <questiontext>ข้อใดต่อไปนี้คือแหล่งพลังงานของเซลล์?</questiontext>
+            <questiontext>ข้อใดต่อไปนี้คือแหล่งพลังงานของเซลล?</questiontext>
             <choices>
                 <index>1</index>
                 <text>นิวเคลียส</text>
             </choices>
             <choices>
                 <index>2</index>
-                <text>เยื่อหุ้มเซลล์</text>
+                <text>เยื่อหุ้มเซลล</text>
             </choices>
             <choices>
                 <index>3</index>
@@ -955,7 +955,7 @@
             </choices>
             <choices>
                 <index>4</index>
-                <text>คลอโรพลาสต์</text>
+                <text>คลอโรพลาสต</text>
             </choices>
         </questions>
         <questions>
@@ -971,7 +971,7 @@
             </choices>
             <choices>
                 <index>3</index>
-                <text>ไตรกลีเซอไรด์</text>
+                <text>ไตรกลีเซอไรด</text>
             </choices>
             <choices>
                 <index>4</index>
@@ -1041,12 +1041,12 @@
             </choices>
             <choices>
                 <index>3</index>
-                <text>has driven์</text>
+                <text>has driven</text>
             </choices>
             <choices>
                 <index>4</index>
-                <text>ถูกทุกข้อ</text>
-                <iscorrect>was driving</iscorrect>
+                <text>was driving</text>
+                <iscorrect>true</iscorrect>
             </choices>
         </questions>
     </quiz>
@@ -1111,12 +1111,12 @@
             </choices>
             <choices>
                 <index>3</index>
-                <text>has driven์</text>
+                <text>has driven</text>
             </choices>
             <choices>
                 <index>4</index>
-                <text>ถูกทุกข้อ</text>
-                <iscorrect>was driving</iscorrect>
+                <text>was driving</text>
+                <iscorrect>true</iscorrect>
             </choices>
         </questions>
     </quiz>
@@ -1429,14 +1429,14 @@
         </questions>
         <questions>
             <index>2</index>
-            <questiontext>ข้อใดต่อไปนี้คือแหล่งพลังงานของเซลล์?</questiontext>
+            <questiontext>ข้อใดต่อไปนี้คือแหล่งพลังงานของเซลล?</questiontext>
             <choices>
                 <index>1</index>
                 <text>นิวเคลียส</text>
             </choices>
             <choices>
                 <index>2</index>
-                <text>เยื่อหุ้มเซลล์</text>
+                <text>เยื่อหุ้มเซลล</text>
             </choices>
             <choices>
                 <index>3</index>
@@ -1445,7 +1445,7 @@
             </choices>
             <choices>
                 <index>4</index>
-                <text>คลอโรพลาสต์</text>
+                <text>คลอโรพลาสต</text>
             </choices>
         </questions>
         <questions>
@@ -1461,7 +1461,7 @@
             </choices>
             <choices>
                 <index>3</index>
-                <text>ไตรกลีเซอไรด์</text>
+                <text>ไตรกลีเซอไรด</text>
             </choices>
             <choices>
                 <index>4</index>
@@ -1499,14 +1499,14 @@
         </questions>
         <questions>
             <index>2</index>
-            <questiontext>ข้อใดต่อไปนี้คือแหล่งพลังงานของเซลล์?</questiontext>
+            <questiontext>ข้อใดต่อไปนี้คือแหล่งพลังงานของเซลล?</questiontext>
             <choices>
                 <index>1</index>
                 <text>นิวเคลียส</text>
             </choices>
             <choices>
                 <index>2</index>
-                <text>เยื่อหุ้มเซลล์</text>
+                <text>เยื่อหุ้มเซลล</text>
             </choices>
             <choices>
                 <index>3</index>
@@ -1515,7 +1515,7 @@
             </choices>
             <choices>
                 <index>4</index>
-                <text>คลอโรพลาสต์</text>
+                <text>คลอโรพลาสต</text>
             </choices>
         </questions>
         <questions>
@@ -1531,7 +1531,7 @@
             </choices>
             <choices>
                 <index>3</index>
-                <text>ไตรกลีเซอไรด์</text>
+                <text>ไตรกลีเซอไรด</text>
             </choices>
             <choices>
                 <index>4</index>
@@ -1601,12 +1601,12 @@
             </choices>
             <choices>
                 <index>3</index>
-                <text>has driven์</text>
+                <text>has driven</text>
             </choices>
             <choices>
                 <index>4</index>
-                <text>ถูกทุกข้อ</text>
-                <iscorrect>was driving</iscorrect>
+                <text>was driving</text>
+                <iscorrect>true</iscorrect>
             </choices>
         </questions>
     </quiz>
@@ -1671,12 +1671,12 @@
             </choices>
             <choices>
                 <index>3</index>
-                <text>has driven์</text>
+                <text>has driven</text>
             </choices>
             <choices>
                 <index>4</index>
-                <text>ถูกทุกข้อ</text>
-                <iscorrect>was driving</iscorrect>
+                <text>was driving</text>
+                <iscorrect>true</iscorrect>
             </choices>
         </questions>
     </quiz>
@@ -1989,14 +1989,14 @@
         </questions>
         <questions>
             <index>2</index>
-            <questiontext>ข้อใดต่อไปนี้คือแหล่งพลังงานของเซลล์?</questiontext>
+            <questiontext>ข้อใดต่อไปนี้คือแหล่งพลังงานของเซลล?</questiontext>
             <choices>
                 <index>1</index>
                 <text>นิวเคลียส</text>
             </choices>
             <choices>
                 <index>2</index>
-                <text>เยื่อหุ้มเซลล์</text>
+                <text>เยื่อหุ้มเซลล</text>
             </choices>
             <choices>
                 <index>3</index>
@@ -2005,7 +2005,7 @@
             </choices>
             <choices>
                 <index>4</index>
-                <text>คลอโรพลาสต์</text>
+                <text>คลอโรพลาสต</text>
             </choices>
         </questions>
         <questions>
@@ -2021,7 +2021,7 @@
             </choices>
             <choices>
                 <index>3</index>
-                <text>ไตรกลีเซอไรด์</text>
+                <text>ไตรกลีเซอไรด</text>
             </choices>
             <choices>
                 <index>4</index>
@@ -2059,14 +2059,14 @@
         </questions>
         <questions>
             <index>2</index>
-            <questiontext>ข้อใดต่อไปนี้คือแหล่งพลังงานของเซลล์?</questiontext>
+            <questiontext>ข้อใดต่อไปนี้คือแหล่งพลังงานของเซลล?</questiontext>
             <choices>
                 <index>1</index>
                 <text>นิวเคลียส</text>
             </choices>
             <choices>
                 <index>2</index>
-                <text>เยื่อหุ้มเซลล์</text>
+                <text>เยื่อหุ้มเซลล</text>
             </choices>
             <choices>
                 <index>3</index>
@@ -2075,7 +2075,7 @@
             </choices>
             <choices>
                 <index>4</index>
-                <text>คลอโรพลาสต์</text>
+                <text>คลอโรพลาสต</text>
             </choices>
         </questions>
         <questions>
@@ -2091,7 +2091,7 @@
             </choices>
             <choices>
                 <index>3</index>
-                <text>ไตรกลีเซอไรด์</text>
+                <text>ไตรกลีเซอไรด</text>
             </choices>
             <choices>
                 <index>4</index>
@@ -2161,12 +2161,12 @@
             </choices>
             <choices>
                 <index>3</index>
-                <text>has driven์</text>
+                <text>has driven</text>
             </choices>
             <choices>
                 <index>4</index>
-                <text>ถูกทุกข้อ</text>
-                <iscorrect>was driving</iscorrect>
+                <text>was driving</text>
+                <iscorrect>true</iscorrect>
             </choices>
         </questions>
     </quiz>
@@ -2231,12 +2231,12 @@
             </choices>
             <choices>
                 <index>3</index>
-                <text>has driven์</text>
+                <text>has driven</text>
             </choices>
             <choices>
                 <index>4</index>
-                <text>ถูกทุกข้อ</text>
-                <iscorrect>was driving</iscorrect>
+                <text>was driving</text>
+                <iscorrect>true</iscorrect>
             </choices>
         </questions>
     </quiz>
@@ -2549,14 +2549,14 @@
         </questions>
         <questions>
             <index>2</index>
-            <questiontext>ข้อใดต่อไปนี้คือแหล่งพลังงานของเซลล์?</questiontext>
+            <questiontext>ข้อใดต่อไปนี้คือแหล่งพลังงานของเซลล?</questiontext>
             <choices>
                 <index>1</index>
                 <text>นิวเคลียส</text>
             </choices>
             <choices>
                 <index>2</index>
-                <text>เยื่อหุ้มเซลล์</text>
+                <text>เยื่อหุ้มเซลล</text>
             </choices>
             <choices>
                 <index>3</index>
@@ -2565,7 +2565,7 @@
             </choices>
             <choices>
                 <index>4</index>
-                <text>คลอโรพลาสต์</text>
+                <text>คลอโรพลาสต</text>
             </choices>
         </questions>
         <questions>
@@ -2581,7 +2581,7 @@
             </choices>
             <choices>
                 <index>3</index>
-                <text>ไตรกลีเซอไรด์</text>
+                <text>ไตรกลีเซอไรด</text>
             </choices>
             <choices>
                 <index>4</index>
@@ -2619,14 +2619,14 @@
         </questions>
         <questions>
             <index>2</index>
-            <questiontext>ข้อใดต่อไปนี้คือแหล่งพลังงานของเซลล์?</questiontext>
+            <questiontext>ข้อใดต่อไปนี้คือแหล่งพลังงานของเซลล?</questiontext>
             <choices>
                 <index>1</index>
                 <text>นิวเคลียส</text>
             </choices>
             <choices>
                 <index>2</index>
-                <text>เยื่อหุ้มเซลล์</text>
+                <text>เยื่อหุ้มเซลล</text>
             </choices>
             <choices>
                 <index>3</index>
@@ -2635,7 +2635,7 @@
             </choices>
             <choices>
                 <index>4</index>
-                <text>คลอโรพลาสต์</text>
+                <text>คลอโรพลาสต</text>
             </choices>
         </questions>
         <questions>
@@ -2651,7 +2651,7 @@
             </choices>
             <choices>
                 <index>3</index>
-                <text>ไตรกลีเซอไรด์</text>
+                <text>ไตรกลีเซอไรด</text>
             </choices>
             <choices>
                 <index>4</index>
@@ -2721,12 +2721,12 @@
             </choices>
             <choices>
                 <index>3</index>
-                <text>has driven์</text>
+                <text>has driven</text>
             </choices>
             <choices>
                 <index>4</index>
-                <text>ถูกทุกข้อ</text>
-                <iscorrect>was driving</iscorrect>
+                <text>was driving</text>
+                <iscorrect>true</iscorrect>
             </choices>
         </questions>
     </quiz>
@@ -2791,12 +2791,12 @@
             </choices>
             <choices>
                 <index>3</index>
-                <text>has driven์</text>
+                <text>has driven</text>
             </choices>
             <choices>
                 <index>4</index>
-                <text>ถูกทุกข้อ</text>
-                <iscorrect>was driving</iscorrect>
+                <text>was driving</text>
+                <iscorrect>true</iscorrect>
             </choices>
         </questions>
     </quiz>
@@ -3109,14 +3109,14 @@
         </questions>
         <questions>
             <index>2</index>
-            <questiontext>ข้อใดต่อไปนี้คือแหล่งพลังงานของเซลล์?</questiontext>
+            <questiontext>ข้อใดต่อไปนี้คือแหล่งพลังงานของเซลล?</questiontext>
             <choices>
                 <index>1</index>
                 <text>นิวเคลียส</text>
             </choices>
             <choices>
                 <index>2</index>
-                <text>เยื่อหุ้มเซลล์</text>
+                <text>เยื่อหุ้มเซลล</text>
             </choices>
             <choices>
                 <index>3</index>
@@ -3125,7 +3125,7 @@
             </choices>
             <choices>
                 <index>4</index>
-                <text>คลอโรพลาสต์</text>
+                <text>คลอโรพลาสต</text>
             </choices>
         </questions>
         <questions>
@@ -3141,7 +3141,7 @@
             </choices>
             <choices>
                 <index>3</index>
-                <text>ไตรกลีเซอไรด์</text>
+                <text>ไตรกลีเซอไรด</text>
             </choices>
             <choices>
                 <index>4</index>
@@ -3179,14 +3179,14 @@
         </questions>
         <questions>
             <index>2</index>
-            <questiontext>ข้อใดต่อไปนี้คือแหล่งพลังงานของเซลล์?</questiontext>
+            <questiontext>ข้อใดต่อไปนี้คือแหล่งพลังงานของเซลล?</questiontext>
             <choices>
                 <index>1</index>
                 <text>นิวเคลียส</text>
             </choices>
             <choices>
                 <index>2</index>
-                <text>เยื่อหุ้มเซลล์</text>
+                <text>เยื่อหุ้มเซลล</text>
             </choices>
             <choices>
                 <index>3</index>
@@ -3195,7 +3195,7 @@
             </choices>
             <choices>
                 <index>4</index>
-                <text>คลอโรพลาสต์</text>
+                <text>คลอโรพลาสต</text>
             </choices>
         </questions>
         <questions>
@@ -3211,7 +3211,7 @@
             </choices>
             <choices>
                 <index>3</index>
-                <text>ไตรกลีเซอไรด์</text>
+                <text>ไตรกลีเซอไรด</text>
             </choices>
             <choices>
                 <index>4</index>
@@ -3281,12 +3281,12 @@
             </choices>
             <choices>
                 <index>3</index>
-                <text>has driven์</text>
+                <text>has driven</text>
             </choices>
             <choices>
                 <index>4</index>
-                <text>ถูกทุกข้อ</text>
-                <iscorrect>was driving</iscorrect>
+                <text>was driving</text>
+                <iscorrect>true</iscorrect>
             </choices>
         </questions>
     </quiz>
@@ -3351,12 +3351,12 @@
             </choices>
             <choices>
                 <index>3</index>
-                <text>has driven์</text>
+                <text>has driven</text>
             </choices>
             <choices>
                 <index>4</index>
-                <text>ถูกทุกข้อ</text>
-                <iscorrect>was driving</iscorrect>
+                <text>was driving</text>
+                <iscorrect>true</iscorrect>
             </choices>
         </questions>
     </quiz>
